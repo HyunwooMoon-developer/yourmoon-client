@@ -1,0 +1,36 @@
+.new-products{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.new-products h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+    position: relative;
+    line-height: 60px;
+    color: grey;
+    text-decoration: underline;
+}
+
+.new-products-list{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-products-list a{
+    text-decoration: none;
+    color: black;
+}
+
+.new-products img{
+    margin-right: 30px;
+    width: 300px;
+    height: 200px;
+}
+
+.new-products-rating{
+    color: rgb(228, 148, 0);
+}

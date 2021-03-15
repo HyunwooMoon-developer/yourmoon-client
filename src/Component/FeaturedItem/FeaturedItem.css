@@ -1,0 +1,35 @@
+.featured{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.featured h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+    position: relative;
+    line-height: 60px;
+    color: grey;
+    text-decoration: underline;
+}
+
+.featured-list{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-list a{
+    text-decoration: none;
+    color: black;
+}
+.featured-list img{
+    margin-right: 30px;
+    width: 300px;
+    height: 200px;
+}
+
+.featured-rating{
+    color: rgb(228, 148, 0);
+}

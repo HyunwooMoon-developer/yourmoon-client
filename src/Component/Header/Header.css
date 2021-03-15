@@ -1,0 +1,38 @@
+header{
+    background : #e4bfd6;
+    background : linear-gradient(to right, #e4bfd6, #fffcdc);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    letter-spacing: 8px;
+}
+
+header nav{
+    flex: 1;
+    text-align: right;
+}
+
+header nav ul{
+    list-style-type: none;
+    display: inline-block;
+}
+
+header nav ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+header nav ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+header nav ul li a:hover{
+    color: hotpink;
+}

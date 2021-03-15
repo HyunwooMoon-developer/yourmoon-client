@@ -1,0 +1,92 @@
+.shopping-page{
+    max-width: 1080px;
+    margin: auto;
+}
+
+.shopping-top{
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 100px 70px 100px;
+}
+
+.shopping-top h2{
+    color: grey;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.shopping-top select{
+    width: 150px;
+}
+
+.shopping-main{
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.shopping-nav{
+    flex-grow: 1;
+    margin-left: 50px;
+}
+
+.shopping-nav ul{
+    list-style-type: none;
+}
+
+.shopping-nav ul li{
+    margin-top: 20px;
+}
+
+.shopping-nav ul li a{
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+}
+
+.shopping-nav ul li a:hover{
+    color: hotpink;
+}
+
+.shopping-list{
+    flex-grow: 4;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-list img{
+    margin-right: 30px;
+    width: 250px;
+    height: 200px;
+}
+
+.shopping-list a{
+    text-decoration: none;
+    color: black;
+}
+
+.shopping-item{
+    flex-basis: 30%;
+    margin-bottom: 30px;
+}
+
+.shopping-rating .fa{
+    color: rgb(228, 148, 0);
+}
+
+.page-button{
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 20px;
+}
+
+.page-button a{
+    text-decoration: none;
+    color: black;
+}
+
+.page-button a:hover{
+    color: hotpink;
+}
