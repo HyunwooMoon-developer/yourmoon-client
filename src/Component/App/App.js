@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import ShopRoute from "../../Route/ShopRoute/ShopRoute";
 import ItemPageRoute from "../../Route/ItemPageRoute/ItemPageRoute";
 import CartRoute from "../../Route/CartRoute/CartRoute";
+import LoginPage from "../../Route/LoginRoute/LoginPage";
+import RegistrationPage from "../../Route/RegistrationRoute/RegistrationPage";
 
 class App extends Component {
   render() {
@@ -18,8 +20,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/shop" component={ShopRoute} />
-            <Route path="/shop/:item_id" component={ItemPageRoute} />
+            <Route path="/shop/:category_id" component={ShopRoute} />
+            <Route path="/item/:item_id" component={ItemPageRoute} />
             <Route path="/cart" component={CartRoute} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegistrationPage} />
           </Switch>
         </main>
         <footer>

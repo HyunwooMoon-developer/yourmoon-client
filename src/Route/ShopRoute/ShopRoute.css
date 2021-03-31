@@ -25,28 +25,6 @@
     text-align: center;
 }
 
-.shopping-nav{
-    flex-grow: 1;
-    margin-left: 50px;
-}
-
-.shopping-nav ul{
-    list-style-type: none;
-}
-
-.shopping-nav ul li{
-    margin-top: 20px;
-}
-
-.shopping-nav ul li a{
-    text-decoration: none;
-    color: grey;
-    font-weight: bold;
-}
-
-.shopping-nav ul li a:hover{
-    color: hotpink;
-}
 
 .shopping-list{
     flex-grow: 4;
@@ -67,13 +45,8 @@
     color: black;
 }
 
-.shopping-item{
-    flex-basis: 30%;
-    margin-bottom: 30px;
-}
-
-.shopping-rating .fa{
-    color: rgb(228, 148, 0);
+.shopping-list ul{
+    list-style-type: none;
 }
 
 .page-button{
