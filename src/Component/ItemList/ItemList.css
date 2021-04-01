@@ -3,6 +3,10 @@
     margin-bottom: 30px;
 }
 
+.shopping-item h3{
+    margin-top: 20px;
+}
+
 .shopping-rating .fa{
-    color: rgb(228, 148, 0);
+    color: #e49400;
 }
