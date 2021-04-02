@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import cartApiService from "../Service/Cart-api-service";
 import CategoryApiService from "../Service/Category-api-service";
 import ItemApiService from "../Service/Item-api-service";
 
 const ItemContext = React.createContext({
+  cart: [],
   category: [],
   items: [],
   item: [],
@@ -10,10 +12,14 @@ const ItemContext = React.createContext({
   error: null,
   setItems: () => {},
   setItem: () => {},
+  clearItem: () => {},
   setCategory: () => {},
   setReviews: () => {},
   addReview: () => {},
   deleteReview: () => {},
+  setCart: () => {},
+  addCart: () => {},
+  deleteCart : () => {},
   setError: () => {},
   clearError: () => {},
 });
@@ -22,6 +28,7 @@ export default ItemContext;
 
 export class ItemProvider extends Component {
   state = {
+    cart: [],
     category: [],
     items: [],
     item: [],
@@ -35,6 +42,7 @@ export class ItemProvider extends Component {
       .then(this.setCategory)
       .catch(this.setError);
     ItemApiService.getAllItems().then(this.setItems).catch(this.setError);
+    cartApiService.getCartList().then(this.setCart).catch(this.setError);
   }
 
   setCategory = (category) => {
@@ -43,6 +51,11 @@ export class ItemProvider extends Component {
 
   setItem = (item) => {
     this.setState({ item });
+  };
+
+  clearItem = () => {
+    this.setItem([]);
+    this.setReviews([]);
   };
 
   setItems = (items) => {
@@ -58,11 +71,26 @@ export class ItemProvider extends Component {
   };
 
   deleteReview = (review_id) => {
-    this.setReviews({
+    this.setState({
       reviews: this.state.reviews.filter((review) => review.id !== review_id),
     });
   };
 
+  setCart = (cart) => {
+    this.setState({
+      cart,
+    });
+  };
+
+  addCart = (item) => {
+    this.setCart([...this.state.cart, item]);
+  };
+
+  deleteCart = (item_id) => {
+    this.setState({
+      cart : this.state.cart.filter((item) => item.id !== item_id)
+    })
+  }
   setError = (error) => {
     console.error(error);
     this.setState({ error });
@@ -73,6 +101,7 @@ export class ItemProvider extends Component {
 
   render() {
     const itemValue = {
+      cart: this.state.cart,
       category: this.state.category,
       items: this.state.items,
       item: this.state.item,
@@ -81,9 +110,13 @@ export class ItemProvider extends Component {
       setCategory: this.setCategory,
       setItems: this.setItems,
       setItem: this.setItem,
+      clearItem: this.clearItem,
       setReviews: this.setReviews,
       deleteReview: this.deleteReview,
       addReview: this.addReview,
+      setCart: this.setCart,
+      addCart: this.addCart,
+      deleteCart : this.deleteCart,
       setError: this.setError,
       clearError: this.clearError,
     };

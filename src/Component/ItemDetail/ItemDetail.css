@@ -1,0 +1,80 @@
+.item-main{
+    display: flex;
+    margin-left: 15px;
+}
+
+.item-left{
+    margin-right: 100px;
+}
+
+
+.item-image-main{
+    margin-bottom: 20px;
+}
+
+.item-image-main img{
+    width: 640px;
+    height: 400px;
+}
+
+.item-image-select{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.item-image-select button{
+    border: none;
+}
+
+.item-image-select img{
+    width: 155px;
+    height: 80px;
+}
+
+
+.item-right h2{
+    font-weight: bold;
+    font-size: 2em;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.item-right h3{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.select-item .select-color{
+    margin-bottom: 20px;
+}
+
+.select-item .select-scent{
+    margin-bottom: 20px;
+}
+
+.select-item .select-qty{
+    margin-bottom: 20px;
+}
+
+.select-item button{
+    margin-bottom: 20px;
+    width: 70%;
+    outline: none;
+    background-color: #e4bfd6;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.select-item button:hover{
+    background-color: #ca9fba;
+}
+
+.select-item button:active{
+    background-color: #ca9fba;
+    transform: translateY(4px);
+}

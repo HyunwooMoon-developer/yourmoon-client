@@ -1,21 +1,40 @@
-.item-reviews{
-    margin-top: 50px;
-    list-style-type: none;
+.item-reviews {
+  margin-top: 50px;
+  list-style-type: none;
+  max-width: 60%;
 }
 
+.item-review {
+  margin : 20px 0 20px 15px;
+  background-color: #fae1f0;
+  border: 4px solid #e4bfd6;
+  border-radius: 15px;
+  text-align: center;
+}
 
+.item-review h3,h4, p {
+  margin-top: 20px;
+  margin-left: 15px;
+}
 
-.item-review{
+.item-review button{
     margin-top: 20px;
-    margin-left: 150px;
-    border: 1px solid black;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: #e4bfd6;
+    border: none;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
-
-
-.item-review h3,h4,p{
-    margin: 20px 20px 20px 20px;
+.item-review button:hover{
+    background-color: #ca9fba;
 }
 
-
-
+.item-review button:active{
+    background-color: #ca9fba;
+    transform: translateY(4px);
+}

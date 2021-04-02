@@ -34,11 +34,13 @@ class ItemList extends Component {
         {filteredItem.map((i) => (
           <li className="shopping-item" key={i.id}>
             <Link to={`/item/${i.id}`}>
+              <div className="shopping-detail">
               <img src={i.img[0]} />
               <h3>{i.item_name}</h3>
               <RatingStar rating={i.average_review_rating} />
               <p>reviews({i.number_of_reviews})</p>
               <p>$ : {i.price}</p>
+              </div>
             </Link>
           </li>
         ))}

@@ -19,21 +19,14 @@ class Review extends Component {
   static contextType = ItemContext;
 
   handleClickDelete = (review_id) => {
-    console.log(review_id)
-    const item_id = Number(this.props.match.params.item_id);
-    //console.log(item_id)
 
     ReviewApiService.deleteReview(review_id)
-      .then(this.context.deleteReview)
-      .then(() => {
-        return this.props.history.push(`/item/${item_id}`);
-      })
+      .then(this.context.deleteReview(review_id))
       .catch(this.context.setError);
   };
 
   render() {
     const { reviews } = this.props;
-    //console.log(reviews)
     return (
       <ul className="item-reviews">
         {reviews.map((review) => (

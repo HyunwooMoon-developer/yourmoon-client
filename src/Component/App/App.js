@@ -4,7 +4,6 @@ import { Route, Switch } from "react-router";
 import Header from "../Header/Header";
 import Main from "../../Route/MainRoute/Main";
 import "./App.css";
-import { Link } from "react-router-dom";
 import ShopRoute from "../../Route/ShopRoute/ShopRoute";
 import ItemPageRoute from "../../Route/ItemPageRoute/ItemPageRoute";
 import CartRoute from "../../Route/CartRoute/CartRoute";
@@ -31,12 +30,7 @@ class App extends Component {
           <br />
           <p>&copy; HyunwooMoon 2021</p>
           <div className="info">
-            <div className="info-link left">
-              <h3>
-                <Link to={"/"}>About Mall</Link>
-              </h3>
-            </div>
-            <div className="info-link right">
+            <div className="info-link">
               <h3>Support</h3>
               <a
                 href={"https://github.com/HyunwooMoon-developer"}

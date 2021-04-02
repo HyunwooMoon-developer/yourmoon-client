@@ -4,9 +4,8 @@
 }
 
 .shopping-top{
-    display: flex;
-    justify-content: space-between;
     margin: 70px 100px 70px 100px;
+    text-align: center;
 }
 
 .shopping-top h2{
@@ -27,27 +26,19 @@
 
 
 .shopping-list{
-    flex-grow: 4;
+    flex-grow: 8;
     margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.shopping-list img{
-    margin-right: 30px;
-    width: 250px;
-    height: 200px;
-}
-
-.shopping-list a{
-    text-decoration: none;
-    color: black;
-}
 
 .shopping-list ul{
     list-style-type: none;
 }
+
 
 .page-button{
     margin-top: 20px;

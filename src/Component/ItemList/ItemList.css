@@ -1,12 +1,38 @@
 .shopping-item{
-    flex-basis: 30%;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 0;
 }
 
-.shopping-item h3{
+.shopping-item a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.shopping-detail{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 275px;
+}
+
+.shopping-detail h3{
     margin-top: 20px;
+}
+
+.shopping-detail img{
+    width: 275px;
+    height: 200px;
+}
+
+.shopping-detail p{
+    font-size: 1em;
 }
 
 .shopping-rating .fa{
     color: #e49400;
 }
+

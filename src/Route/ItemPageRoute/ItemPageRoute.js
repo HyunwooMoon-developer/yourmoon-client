@@ -9,30 +9,37 @@ import "./ItemPageRoute.css";
 
 class ItemPageRoute extends Component {
   static defaultProps = {
-    match : {
-        params : {},
-    }
-}
+    match: {
+      params: {},
+    },
+  };
 
   static contextType = ItemContext;
 
-  componentDidMount(){
-    const item_id = parseInt(this.props.match.params.item_id);
+  componentDidMount() {
+    const {item_id} = this.props.match.params
     ItemApiService.getItem(item_id)
-    .then(this.context.setItem)
-    .catch(this.context.setError)
-    ItemApiService.getItemReviews(item_id).then(this.context.setReviews).catch(this.context.setError)
-}
+      .then(this.context.setItem)
+      .catch(this.context.setError);
+    ItemApiService.getItemReviews(item_id)
+      .then(this.context.setReviews)
+      .catch(this.context.setError);
+  }
+
+  componentWillUnmount(){
+    this.context.clearItem();
+  }
+
   
 
   render() {
-    const {item , reviews} = this.context;
+    const { item, reviews } = this.context;
 
     return (
       <div className="item-page">
-        <ItemDetail item={item}/>
-        <AddReview item={item}/>
-        <Review reviews={reviews}/>
+        <ItemDetail item={item} />
+        <Review  reviews={reviews}/>
+        <AddReview />
       </div>
     );
   }
