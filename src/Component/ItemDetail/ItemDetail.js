@@ -29,11 +29,11 @@ class ItemDetail extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { cart_qty } = e.target;
+    const { cart_qty, scent, color } = e.target;
     const { item_id } = this.props.match.params;
 
     cartApiService
-      .addCartList(item_id, parseInt(cart_qty.value))
+      .addCartList(item_id, parseInt(cart_qty.value), scent.value, color.value)
       .then(this.context.addCart)
       .then(() => {
         cart_qty.value = 1;
@@ -45,6 +45,7 @@ class ItemDetail extends Component {
 
   render() {
     const { item } = this.props;
+    console.log(item);
     return (
       <div className="item-main">
         <div className="item-left">
@@ -70,18 +71,18 @@ class ItemDetail extends Component {
           <h2>{item.item_name}</h2>
           <h3>{item.price}</h3>
           <form className="select-item" onSubmit={this.handleSubmit}>
-            <label htmlFor="select-color">Color : </label>
-            <select className="select-color">
-              <option value="null">-</option>
-              <option value="red">Red</option>
-              <option value="White">White</option>
+            <label htmlFor="color">Color : </label>
+            <select className="color" name="color" id="color">
+              {(item.colors || []).map((c) => (
+                <option value={c} key={c}>{c}</option>
+              ))}
             </select>
             <br />
-            <label htmlFor="select-scent">Scent : </label>
-            <select className="select-scent">
-              <option value="null">-</option>
-              <option value="lavendar">Lavendar</option>
-              <option value="Mint">Mint</option>
+            <label htmlFor="scent">Scent : </label>
+            <select className="scent" id="scent" name="scent">
+            {(item.scents || []).map((s) => (
+                <option value={s} key={s}>{s}</option>
+              ))}
             </select>
             <br />
             <label htmlFor="qty">Qty : </label>

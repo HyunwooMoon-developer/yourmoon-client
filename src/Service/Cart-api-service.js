@@ -12,7 +12,7 @@ const cartApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-  addCartList(item_id, qty) {
+  addCartList(item_id, qty, scent, color) {
     return fetch(`${config.API_ENDPOINT}/user/cart`, {
       method: "POST",
       headers: {
@@ -22,6 +22,8 @@ const cartApiService = {
       body: JSON.stringify({
         item_id: item_id,
         qty : qty,
+        scent : scent,
+        color : color,
       }),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()

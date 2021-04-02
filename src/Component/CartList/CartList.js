@@ -41,6 +41,8 @@ class CartList extends Component {
                     <div className="cart-info-detail">
                       <p>{c.item_name}</p>
                       <p>Price : {c.price}</p>
+                      <p>{c.color}</p>
+                      <p>{c.scent}</p>
                       <button onClick={() => this.handleDelete(c.cart_item_id)}>Delete</button>
                     </div>
                   </div>
