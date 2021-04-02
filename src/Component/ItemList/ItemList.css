@@ -1,8 +1,9 @@
 .shopping-item{
-    margin-bottom: 30px;
+    margin: 30px;
     display: flex;
     flex-direction: column;
     border: 0;
+
 }
 
 .shopping-item a{

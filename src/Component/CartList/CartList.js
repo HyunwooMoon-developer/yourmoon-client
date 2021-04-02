@@ -13,15 +13,15 @@ class CartList extends Component {
 
     static contextType = ItemContext;
 
-    handleDelete = (item_id) => {
-        cartApiService.deleteCartList(item_id)
-        .then(this.context.deleteCart(item_id))
+    handleDelete = (cart_item_id) => {
+        cartApiService.deleteCartList(cart_item_id)
+        .then(this.context.deleteCart(cart_item_id))
         .catch(this.context.setError)
     }
 
 
   render() {
-    const { cart } = this.props;
+    const { cart} = this.props;
     return (
       <div className="cart-main">
         <table>
@@ -32,8 +32,8 @@ class CartList extends Component {
               <th>Price</th>
             </tr>
           </thead>
-          {cart.map((c) => (
-            <tbody key={c.id}>
+          {cart.map((c,index) => (
+            <tbody key={index}>
               <tr>
                 <td>
                   <div className="cart-info">
@@ -41,12 +41,12 @@ class CartList extends Component {
                     <div className="cart-info-detail">
                       <p>{c.item_name}</p>
                       <p>Price : {c.price}</p>
-                      <button onClick={() => this.handleDelete(c.id)}>Delete</button>
+                      <button onClick={() => this.handleDelete(c.cart_item_id)}>Delete</button>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <p>{cart.cart_qty}</p>
+                  <p>{c.qty}</p>
                 </td>
                 <td>
                   <p>$ 60.00</p>

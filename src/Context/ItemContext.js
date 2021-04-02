@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import cartApiService from "../Service/Cart-api-service";
 import CategoryApiService from "../Service/Category-api-service";
 import ItemApiService from "../Service/Item-api-service";
 
@@ -42,7 +41,6 @@ export class ItemProvider extends Component {
       .then(this.setCategory)
       .catch(this.setError);
     ItemApiService.getAllItems().then(this.setItems).catch(this.setError);
-    cartApiService.getCartList().then(this.setCart).catch(this.setError);
   }
 
   setCategory = (category) => {
@@ -77,18 +75,20 @@ export class ItemProvider extends Component {
   };
 
   setCart = (cart) => {
+    console.log('setcart', cart)
     this.setState({
       cart,
     });
   };
 
   addCart = (item) => {
+    console.log(item);
     this.setCart([...this.state.cart, item]);
   };
 
-  deleteCart = (item_id) => {
+  deleteCart = (cart_item_id) => {
     this.setState({
-      cart : this.state.cart.filter((item) => item.id !== item_id)
+      cart : this.state.cart.filter((item) => item.cart_item_id !== cart_item_id)
     })
   }
   setError = (error) => {

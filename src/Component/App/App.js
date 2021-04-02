@@ -9,8 +9,13 @@ import ItemPageRoute from "../../Route/ItemPageRoute/ItemPageRoute";
 import CartRoute from "../../Route/CartRoute/CartRoute";
 import LoginPage from "../../Route/LoginRoute/LoginPage";
 import RegistrationPage from "../../Route/RegistrationRoute/RegistrationPage";
+import PrivateRoute from "../Utils/PrivateRoute";
+import UserContext from "../../Context/UserContext";
 
 class App extends Component {
+
+  static contextType = UserContext;
+
   render() {
     return (
       <div className="App">
@@ -21,7 +26,7 @@ class App extends Component {
             <Route exact path="/shop" component={ShopRoute} />
             <Route path="/shop/:category_id" component={ShopRoute} />
             <Route path="/item/:item_id" component={ItemPageRoute} />
-            <Route path="/cart" component={CartRoute} />
+            <PrivateRoute path="/cart" component={CartRoute} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegistrationPage} />
           </Switch>

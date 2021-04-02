@@ -28,6 +28,7 @@
 .shopping-list{
     flex-grow: 8;
     margin-top: 20px;
+    margin-left: 15%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -37,6 +38,11 @@
 
 .shopping-list ul{
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-left: 20px;
 }
 
 

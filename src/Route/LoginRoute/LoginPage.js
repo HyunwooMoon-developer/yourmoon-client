@@ -19,7 +19,7 @@ class LoginPage extends Component {
     return (
       <div>
         <h2>Login</h2>
-        <LoginForm onLoinSuccess={this.handleLoginSuccess} />
+        <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </div>
     );
   }

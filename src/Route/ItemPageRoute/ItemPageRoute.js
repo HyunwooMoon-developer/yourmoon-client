@@ -17,7 +17,7 @@ class ItemPageRoute extends Component {
   static contextType = ItemContext;
 
   componentDidMount() {
-    const {item_id} = this.props.match.params
+    const { item_id } = this.props.match.params;
     ItemApiService.getItem(item_id)
       .then(this.context.setItem)
       .catch(this.context.setError);
@@ -26,21 +26,22 @@ class ItemPageRoute extends Component {
       .catch(this.context.setError);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.context.clearItem();
   }
 
-  
-
   render() {
     const { item, reviews } = this.context;
+    //console.log(reviews)
 
     return (
-      <div className="item-page">
-        <ItemDetail item={item} />
-        <Review  reviews={reviews}/>
+      <>
+        <div className="item-page">
+          <ItemDetail item={item} />
+        </div>
+        <Review reviews={reviews} />
         <AddReview />
-      </div>
+      </>
     );
   }
 }

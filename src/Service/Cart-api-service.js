@@ -3,7 +3,7 @@ import TokenService from "./token-service";
 
 const cartApiService = {
   getCartList() {
-    return fetch(`${config.API_ENDPOINT}/cart/user`, {
+    return fetch(`${config.API_ENDPOINT}/user/cart`, {
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
@@ -12,31 +12,31 @@ const cartApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-  addCartList(item_id, cart_qty) {
-    return fetch(`${config.API_ENDPOINT}/cart/user`, {
+  addCartList(item_id, qty) {
+    return fetch(`${config.API_ENDPOINT}/user/cart`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        item_id,
-        cart_qty,
+        item_id: item_id,
+        qty : qty,
       }),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-  deleteCartList(item_id){
-      return fetch(`${config.API_ENDPOINT}/cart` , {
-        method: "DELETE",
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${TokenService.getAuthToken()}`,
-        },
-        body : JSON.stringify({item_id})
-      })
-  }
+  deleteCartList(cart_item_id) {
+    return fetch(`${config.API_ENDPOINT}/user/cart`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({ cart_item_id }),
+    });
+  },
 };
 
 export default cartApiService;

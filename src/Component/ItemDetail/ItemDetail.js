@@ -29,17 +29,14 @@ class ItemDetail extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { qty } = e.target;
+    const { cart_qty } = e.target;
     const { item_id } = this.props.match.params;
 
-    console.log("paramsId", this.props.match.params);
-    console.log("cart_qty", qty.value);
-
     cartApiService
-      .addCartList(item_id, parseInt(qty.value))
+      .addCartList(item_id, parseInt(cart_qty.value))
       .then(this.context.addCart)
       .then(() => {
-        qty.value = 1;
+        cart_qty.value = 1;
       })
       .catch(this.context.setError);
   };
@@ -88,7 +85,7 @@ class ItemDetail extends Component {
             </select>
             <br />
             <label htmlFor="qty">Qty : </label>
-            <select className="select-qty" name="qty" id="qty" required>
+            <select className="select-qty" name="cart_qty" id="cart_qty" required>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
