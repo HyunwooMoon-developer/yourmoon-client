@@ -75,14 +75,12 @@ export class ItemProvider extends Component {
   };
 
   setCart = (cart) => {
-    console.log('setcart', cart)
     this.setState({
       cart,
     });
   };
 
   addCart = (item) => {
-    console.log(item);
     this.setCart([...this.state.cart, item]);
   };
 

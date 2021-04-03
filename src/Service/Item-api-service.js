@@ -1,8 +1,8 @@
 import config from "../config";
 
 const ItemApiService = {
-  getAllItems() {
-    return fetch(`${config.API_ENDPOINT}/item`, {
+  getAllItems(page = 1) {
+    return fetch(`${config.API_ENDPOINT}/item/?page=${page}`, {
       headers: {
         "content-type": "application/json",
       },

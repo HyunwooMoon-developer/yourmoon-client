@@ -3,10 +3,10 @@ import jwtDecode from "jwt-decode";
 
 const TokenService = {
   getAuthToken() {
-    return window.localStorage.getItem(config.API_ENDPOINT);
+    return window.localStorage.getItem(config.TOKEN_KEY);
   },
   clearAuthToken() {
-    window.localStorage.removeItem(config.API_ENDPOINT);
+    window.localStorage.removeItem(config.TOKEN_KEY);
   },
   hasAuthToken() {
     return !!TokenService.getAuthToken();
@@ -15,7 +15,7 @@ const TokenService = {
     return window.btoa(`${userName}:${password}`);
   },
   saveAuthToken(token) {
-    window.localStorage.setItem(config.API_ENDPOINT, token);
+    window.localStorage.setItem(config.TOKEN_KEY, token);
   },
   parseJwt(jwt) {
     return jwtDecode(jwt);

@@ -45,7 +45,6 @@ class ItemDetail extends Component {
 
   render() {
     const { item } = this.props;
-    console.log(item);
     return (
       <div className="item-main">
         <div className="item-left">

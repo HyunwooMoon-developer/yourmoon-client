@@ -31,8 +31,10 @@ class AddReview extends Component {
   };
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit} className="add-review-form">
+    const {user} = this.props;
+
+    return (<>
+      {user.id?(<form onSubmit={this.handleSubmit} className="add-review-form">
         <div className="add-review">
           <label htmlFor="text" />
           <br />
@@ -56,7 +58,8 @@ class AddReview extends Component {
           <br />
           <button type="submit">Add Review</button>
         </div>
-      </form>
+      </form>):("")}
+      </>
     );
   }
 }

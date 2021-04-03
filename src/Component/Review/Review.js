@@ -26,7 +26,8 @@ class Review extends Component {
   };
 
   render() {
-    const { reviews } = this.props;
+    const { reviews} = this.props;
+    const {user} = this.props;
     return (
       <ul className="item-reviews">
         {reviews.map((review) => (
@@ -37,9 +38,10 @@ class Review extends Component {
               Date : {format(new Date(review.date_created), "MM/dd/yyyy")}
             </h4>
             <p>{review.text}</p>
-            <button type="button" onClick={() => this.handleClickDelete(review.id)}>
+            {user.id === review.user.id
+            ?(<button type="button" onClick={() => this.handleClickDelete(review.id)}>
               Delete
-            </button>
+            </button>):('')}
           </li>
         ))}
       </ul>

@@ -4,6 +4,7 @@ import AddReview from "../../Component/AddReview/AddReview";
 import ItemDetail from "../../Component/ItemDetail/ItemDetail";
 import Review from "../../Component/Review/Review";
 import ItemContext from "../../Context/ItemContext";
+import UserContext from "../../Context/UserContext";
 import ItemApiService from "../../Service/Item-api-service";
 import "./ItemPageRoute.css";
 
@@ -31,16 +32,16 @@ class ItemPageRoute extends Component {
   }
 
   render() {
-    const { item, reviews } = this.context;
-    //console.log(reviews)
-
+    const { item, reviews} = this.context;
     return (
       <>
-        <div className="item-page">
+      <UserContext.Consumer>
+        {({user}) => (<><div className="item-page">
           <ItemDetail item={item} />
         </div>
-        <Review reviews={reviews} />
-        <AddReview />
+        <Review reviews={reviews} user={user}/>
+        <AddReview user={user}/></>)}
+        </UserContext.Consumer>
       </>
     );
   }

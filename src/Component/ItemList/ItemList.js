@@ -19,10 +19,8 @@ class ItemList extends Component {
   render() {
     const category_id = parseInt(this.props.match.params.category_id);
     const { items } = this.context;
-    //console.log('items',items);
 
     const filteredItem = items.filter((i) => {
-      //console.log( i.category_id, category_id);
       if (!category_id) {
         return items;
       }
