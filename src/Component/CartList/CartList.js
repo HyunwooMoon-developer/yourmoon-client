@@ -44,7 +44,7 @@ class CartList extends Component {
     const { tax } = this.state;
     const itemTotalPrice = this.getCartTotalPrice(cart);
     const taxPrice = Number((itemTotalPrice * tax).toFixed(2));
-    const finalPrice = Number((itemTotalPrice - taxPrice).toFixed(2));
+    const finalPrice = Number((itemTotalPrice + taxPrice).toFixed(2));
     return (
       <>
         <div className="cart-main">
