@@ -35,6 +35,10 @@ class CartList extends Component {
     return Number(itemToTalPrice.toFixed(2));
   };
 
+  paymentAlert = () => {
+    alert("Payment is under construction!!");
+  };
+
   render() {
     const { cart = [] } = this.props;
     const { tax } = this.state;
@@ -99,7 +103,7 @@ class CartList extends Component {
           <div className="estimate-total">
             <h4>Estimate Total : $ {finalPrice}</h4>
           </div>
-          <button>Process to Checkout</button>
+          <button type="button" onClick={this.paymentAlert}>Process to Checkout</button>
         </div>
       </>
     );

@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+import React, { Component } from "react";
+import NotFound from "../../Image/404NotFound.png";
+import "./NotFoundPage.css";
 
 class NotFoundPage extends Component {
-    render() {
-        return (
-            <div>
-                <h2>404 - Page Not Found</h2>
-                <h4>Try going back to your previous page.</h4>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="not-found">
+        <img src={NotFound} />
+      </div>
+    );
+  }
 }
 
 export default NotFoundPage;

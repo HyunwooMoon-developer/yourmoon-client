@@ -14,6 +14,8 @@ class Review extends Component {
     history: {
       push: () => {},
     },
+    reviews: [],
+    user: {},
   };
 
   static contextType = ItemContext;

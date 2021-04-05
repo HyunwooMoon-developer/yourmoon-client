@@ -11,6 +11,8 @@ class ItemDetail extends Component {
     match: {
       params: {},
     },
+    item: {},
+    user: {},
   };
 
   static contextType = ItemContext;
@@ -99,7 +101,11 @@ class ItemDetail extends Component {
               <option value="3">3</option>
             </select>
             <br />
-            {!user.id ? <h4>Please login for Add to cart</h4> : <button type="submit">Add to Cart</button>}
+            {!user.id ? (
+              <h4>Please login for Add to cart</h4>
+            ) : (
+              <button type="submit">Add to Cart</button>
+            )}
           </form>
           <h3>Description</h3>
           <p>{item.description}</p>

@@ -12,6 +12,7 @@ class AddReview extends Component {
     history: {
       push: () => {},
     },
+    user: {},
   };
 
   static contextType = ItemContext;

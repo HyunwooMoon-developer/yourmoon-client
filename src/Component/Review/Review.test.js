@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import Review from "./Review";
 
-describe.skip(`Review component`, () => {
+describe(`Review component`, () => {
   it(`Renders without crashing`, () => {
     const div = document.createElement("div");
 

@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
-describe.skip(`ItemDetail component`, () => {
+describe.only(`ItemDetail component`, () => {
   it(`Renders without crashing`, () => {
     const div = document.createElement("div");
 
