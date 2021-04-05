@@ -1,63 +1,107 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import ItemContext from "../../Context/ItemContext";
 import cartApiService from "../../Service/Cart-api-service";
+import "./CartList.css";
 
 class CartList extends Component {
-    static defaultProps={
-        match: {
-            params : {},
-        }
+  static defaultProps = {
+    match: {
+      params: {},
+    },
+  };
+
+  state = {
+    tax: 0.0975,
+  };
+
+  static contextType = ItemContext;
+
+  handleDelete = (cart_item_id) => {
+    cartApiService
+      .deleteCartList(cart_item_id)
+      .then(this.context.deleteCart(cart_item_id))
+      .catch(this.context.setError);
+  };
+
+  getCartTotalPrice = (item = []) => {
+    let itemToTalPrice = 0;
+    let eachItemTotal = 0;
+    for (let i = 0; i < item.length; i++) {
+      eachItemTotal += item[i].price * item[i].qty;
     }
-
-    static contextType = ItemContext;
-
-    handleDelete = (cart_item_id) => {
-        cartApiService.deleteCartList(cart_item_id)
-        .then(this.context.deleteCart(cart_item_id))
-        .catch(this.context.setError)
-    }
-
+    itemToTalPrice += eachItemTotal;
+    return Number(itemToTalPrice.toFixed(2));
+  };
 
   render() {
-    const { cart} = this.props;
+    const { cart = [] } = this.props;
+    const { tax } = this.state;
+    const itemTotalPrice = this.getCartTotalPrice(cart);
+    const taxPrice = Number((itemTotalPrice * tax).toFixed(2));
+    const finalPrice = Number((itemTotalPrice - taxPrice).toFixed(2));
     return (
-      <div className="cart-main">
-        <table>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Qty</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          {cart.map((c,index) => (
-            <tbody key={index}>
+      <>
+        <div className="cart-main">
+          <table>
+            <thead>
               <tr>
-                <td>
-                  <div className="cart-info">
-                    <img src={c.img && c.img[0]} />
-                    <div className="cart-info-detail">
-                      <p>{c.item_name}</p>
-                      <p>Price : {c.price}</p>
-                      <p>{c.color}</p>
-                      <p>{c.scent}</p>
-                      <button onClick={() => this.handleDelete(c.cart_item_id)}>Delete</button>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p>{c.qty}</p>
-                </td>
-                <td>
-                  <p>$ 60.00</p>
-                </td>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
               </tr>
-            </tbody>
-          ))}
-        </table>
-      </div>
+            </thead>
+            {cart.map((c, index) => {
+              const eachItemTotal = c.price * c.qty;
+
+              return (
+                <tbody key={index}>
+                  <tr>
+                    <td>
+                      <div className="cart-info">
+                        <img src={c.img && c.img[0]} />
+                        <div className="cart-info-detail">
+                          <p>{c.item_name}</p>
+                          <p>Price : $ {c.price}</p>
+                          <p>Color : {c.color}</p>
+                          <p>Scent : {c.scent}</p>
+                          <button
+                            onClick={() => this.handleDelete(c.cart_item_id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p>{c.qty}</p>
+                    </td>
+                    <td>
+                      <p>$ {eachItemTotal.toFixed(2)}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              );
+            })}
+          </table>
+        </div>
+        <div className="payment-main">
+          <h3>Order Summary</h3>
+          <div className="item-total">
+            <p>Item Total : $ {itemTotalPrice}</p>
+            <p>Discount : $ 0</p>
+          </div>
+          <div className="sub-total">
+            <p>Subtotal : $ {itemTotalPrice}</p>
+            <p>Tax : $ {taxPrice}</p>
+          </div>
+          <div className="estimate-total">
+            <h4>Estimate Total : $ {finalPrice}</h4>
+          </div>
+          <button>Process to Checkout</button>
+        </div>
+      </>
     );
   }
 }

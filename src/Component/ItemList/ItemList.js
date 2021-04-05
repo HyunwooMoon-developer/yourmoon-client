@@ -12,7 +12,7 @@ class ItemList extends Component {
       params: {},
     },
   };
-
+  
 
   static contextType = ItemContext;
 
@@ -37,7 +37,7 @@ class ItemList extends Component {
               <h3>{i.item_name}</h3>
               <RatingStar rating={i.average_review_rating} />
               <p>reviews({i.number_of_reviews})</p>
-              <p>$ : {i.price}</p>
+              <p>$ {i.price}</p>
               </div>
             </Link>
           </li>

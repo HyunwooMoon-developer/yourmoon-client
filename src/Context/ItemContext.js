@@ -18,7 +18,7 @@ const ItemContext = React.createContext({
   deleteReview: () => {},
   setCart: () => {},
   addCart: () => {},
-  deleteCart : () => {},
+  deleteCart: () => {},
   setError: () => {},
   clearError: () => {},
 });
@@ -86,9 +86,11 @@ export class ItemProvider extends Component {
 
   deleteCart = (cart_item_id) => {
     this.setState({
-      cart : this.state.cart.filter((item) => item.cart_item_id !== cart_item_id)
-    })
-  }
+      cart: this.state.cart.filter(
+        (item) => item.cart_item_id !== cart_item_id
+      ),
+    });
+  };
   setError = (error) => {
     console.error(error);
     this.setState({ error });
@@ -114,7 +116,7 @@ export class ItemProvider extends Component {
       addReview: this.addReview,
       setCart: this.setCart,
       addCart: this.addCart,
-      deleteCart : this.deleteCart,
+      deleteCart: this.deleteCart,
       setError: this.setError,
       clearError: this.clearError,
     };

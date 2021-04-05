@@ -1,22 +1,31 @@
-.shopping-nav{
+.shopping-nav {
+  flex-grow: 1;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.shopping-nav ul {
+  list-style-type: none;
+}
+
+.shopping-nav ul li {
+  margin-top: 20px;
+}
+
+.shopping-nav ul li a {
+  text-decoration: none;
+  color: rgb(56, 55, 55);
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.shopping-nav ul li a:hover {
+  color: hotpink;
+}
+
+@media all and (max-width: 800px) {
+  .shopping-nav {
     flex-grow: 1;
-}
-
-.shopping-nav ul{
-    list-style-type: none;
-}
-
-.shopping-nav ul li{
-    margin-top: 20px;
-}
-
-.shopping-nav ul li a{
-    text-decoration: none;
-    color: rgb(56, 55, 55);
-    font-size: 1.3em;
-    font-weight: bolder;
-}
-
-.shopping-nav ul li a:hover{
-    color: hotpink;
+    margin-top: 30px;
+  }
 }

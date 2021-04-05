@@ -11,23 +11,22 @@ class Review extends Component {
     match: {
       params: {},
     },
-    history : {
-      push : () => {}
-    }
+    history: {
+      push: () => {},
+    },
   };
 
   static contextType = ItemContext;
 
   handleClickDelete = (review_id) => {
-
     ReviewApiService.deleteReview(review_id)
       .then(this.context.deleteReview(review_id))
       .catch(this.context.setError);
   };
 
   render() {
-    const { reviews} = this.props;
-    const {user} = this.props;
+    const { reviews } = this.props;
+    const { user } = this.props;
     return (
       <ul className="item-reviews">
         {reviews.map((review) => (
@@ -38,10 +37,16 @@ class Review extends Component {
               Date : {format(new Date(review.date_created), "MM/dd/yyyy")}
             </h4>
             <p>{review.text}</p>
-            {user.id === review.user.id
-            ?(<button type="button" onClick={() => this.handleClickDelete(review.id)}>
-              Delete
-            </button>):('')}
+            {user.id === review.user.id ? (
+              <button
+                type="button"
+                onClick={() => this.handleClickDelete(review.id)}
+              >
+                Delete
+              </button>
+            ) : (
+              ""
+            )}
           </li>
         ))}
       </ul>

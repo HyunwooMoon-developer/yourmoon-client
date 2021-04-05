@@ -1,10 +1,11 @@
 .item-main{
     display: flex;
-    margin-left: 15px;
+    flex-direction: row;
+    margin-top: 30px;
 }
 
 .item-left{
-    margin-right: 100px;
+    margin-right: 30px;
 }
 
 
@@ -13,8 +14,8 @@
 }
 
 .item-image-main img{
-    width: 640px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
 }
 
 .item-image-select{
@@ -27,7 +28,7 @@
 }
 
 .item-image-select img{
-    width: 155px;
+    width: 120px;
     height: 80px;
 }
 
@@ -43,9 +44,22 @@
     font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.item-right h4{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .select-item .select-color{
+    margin-bottom: 20px;
+}
+
+.select-item select{
     margin-bottom: 20px;
 }
 
@@ -59,7 +73,7 @@
 
 .select-item button{
     margin-bottom: 20px;
-    width: 70%;
+    width: 50%;
     outline: none;
     background-color: #e4bfd6;
     border: none;
@@ -77,4 +91,20 @@
 .select-item button:active{
     background-color: #ca9fba;
     transform: translateY(4px);
+}
+
+@media all and (max-width : 800px){
+    .item-main{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .item-image-main img{
+        width: 300px;
+        height: 300px;
+    }
+    .item-image-select img{
+        width: 64px;
+        height: 64px;
+    }
 }

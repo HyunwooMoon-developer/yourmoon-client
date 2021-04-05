@@ -1,37 +1,40 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.App{
+.App {
   margin: auto;
 }
 
-footer{
-  background-color: black;
-  color: white;
+footer {
   margin-top: 40px;
   text-align: center;
 }
 
-.info{
+footer .fa {
+  color: #e4bfd6;
+  font-size: 2em;
+}
+.info {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.info-link{
+.info-link {
   flex-basis: 50%;
   margin: auto;
 }
 
-.info-link a{
+.info-link a {
   text-decoration: none;
   color: white;
 }
 
-.info-link .fa{
-  margin: 20px 20px 20px 20px;
+.info-link .fa {
+  margin-left: 20px;
+  margin-top: 10px;
 }

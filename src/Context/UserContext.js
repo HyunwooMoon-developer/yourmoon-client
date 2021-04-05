@@ -23,62 +23,62 @@ export class UserProvider extends Component {
 
     const jwtPayload = TokenService.parseAuthToken();
 
-    if(jwtPayload)
-    state.user = {
+    if (jwtPayload)
+      state.user = {
         id: jwtPayload.user_id,
-        full_name : jwtPayload.full_name,
-        user_name : jwtPayload.user_name,
-    };
+        full_name: jwtPayload.full_name,
+        user_name: jwtPayload.user_name,
+      };
 
     this.state = state;
   }
 
   setError = (error) => {
-      console.error(error);
-      this.setState({
-          error
-      })
-  }
+    console.error(error);
+    this.setState({
+      error,
+    });
+  };
 
   clearError = () => {
-      this.setState({
-          error : null,
-      })
-  }
+    this.setState({
+      error: null,
+    });
+  };
   setUser = (user) => {
-      this.setState({
-          user
-      })
-  }
+    this.setState({
+      user,
+    });
+  };
 
   processLogin = (authToken) => {
-      TokenService.saveAuthToken(authToken);
-      const jwtPayload = TokenService.parseAuthToken();
-      this.setUser({
-          id: jwtPayload.user_id,
-          full_name : jwtPayload.full_name,
-          user_name : jwtPayload.user_name,
-      })
+    TokenService.saveAuthToken(authToken);
+    const jwtPayload = TokenService.parseAuthToken();
+    this.setUser({
+      id: jwtPayload.user_id,
+      full_name: jwtPayload.full_name,
+      user_name: jwtPayload.user_name,
+    });
   };
   processLogout = () => {
-      TokenService.clearAuthToken();
-      this.setUser({});
-  }
+    TokenService.clearAuthToken();
+    this.setUser({});
+  };
 
-  render(){
-      const userValue = {
-          user : this.state.user,
-          error: this.state.error,
-          setError : this.setError,
-          clearError : this.clearError,
-          setUser : this.setUser,
-          processLogin:this.processLogin,
-          processLogout: this.processLogout,
-      }
-   return(
-       <UserContext.Provider value={userValue}>
-           {this.props.children}
-       </UserContext.Provider>
-   )   
+  render() {
+    const userValue = {
+      user: this.state.user,
+      error: this.state.error,
+      setError: this.setError,
+      clearError: this.clearError,
+      setUser: this.setUser,
+      processLogin: this.processLogin,
+      processLogout: this.processLogout,
+    };
+    return (
+      <UserContext.Provider value={userValue}>
+        {this.props.children}
+      </UserContext.Provider>
+    );
   }
 }

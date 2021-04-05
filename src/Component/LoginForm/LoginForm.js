@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UserContext from "../../Context/UserContext";
 import AuthApiService from "../../Service/auth-api-service";
+import "./LoginForm.css";
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -40,24 +41,36 @@ class LoginForm extends Component {
       });
   };
 
-  componentDidMount(){
-      this.firstInput.current.focus();
+  componentDidMount() {
+    this.firstInput.current.focus();
   }
 
   render() {
-      const {error} = this.state;
-    return (<form className="login-form" onSubmit={this.handleSubmit}>
+    const { error } = this.state;
+    return (
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p>{error}</p>}</div>
         <div className="login-form-input">
-            <label htmlFor="login-username-input">UserName : </label>
-            <input ref={this.firstInput} id="login-username-input" name="user_name" required />    
+          <label htmlFor="login-username-input">UserName : </label>
+          <input
+            ref={this.firstInput}
+            id="login-username-input"
+            name="user_name"
+            required
+          />
         </div>
         <div className="login-form-input">
-            <label htmlFor="login-password-input">Password : </label>
-            <input id="login-password-input" name="password" type="password" required/>
+          <label htmlFor="login-password-input">Password : </label>
+          <input
+            id="login-password-input"
+            name="password"
+            type="password"
+            required
+          />
         </div>
         <button type="submit">Login</button>
-    </form>);
+      </form>
+    );
   }
 }
 

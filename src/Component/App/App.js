@@ -11,9 +11,10 @@ import LoginPage from "../../Route/LoginRoute/LoginPage";
 import RegistrationPage from "../../Route/RegistrationRoute/RegistrationPage";
 import PrivateRoute from "../Utils/PrivateRoute";
 import UserContext from "../../Context/UserContext";
+import NotFoundPage from "../../Route/NotFoundPage/NotFoundPage";
+import ErrorBoundary from "../../Route/ErrorBoundary/ErrorBoundary";
 
 class App extends Component {
-
   static contextType = UserContext;
 
   render() {
@@ -21,15 +22,18 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/shop" component={ShopRoute} />
-            <Route path="/shop/:category_id" component={ShopRoute} />
-            <Route path="/item/:item_id" component={ItemPageRoute} />
-            <PrivateRoute path="/cart" component={CartRoute} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegistrationPage} />
-          </Switch>
+          <ErrorBoundary>
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/shop" component={ShopRoute} />
+              <Route path="/shop/:category_id" component={ShopRoute} />
+              <Route path="/item/:item_id" component={ItemPageRoute} />
+              <PrivateRoute path="/cart" component={CartRoute} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/register" component={RegistrationPage} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          </ErrorBoundary>
         </main>
         <footer>
           <br />
@@ -41,13 +45,13 @@ class App extends Component {
                 href={"https://github.com/HyunwooMoon-developer"}
                 target="_blank"
               >
-                <i className="fa fa-github"></i>
+                <i className="fa fa-github fa-xl"></i>
               </a>
               <a href={"https://www.linkedin.com/in/hyunwoomoon/"}>
-                <i className="fa fa-linkedin-square"></i>
+                <i className="fa fa-linkedin-square fa-xl"></i>
               </a>
               <a href={"mailto:mhw9163@gmail.com"}>
-                <i className="fa fa-envelope"></i>
+                <i className="fa fa-envelope fa-xl"></i>
               </a>
             </div>
           </div>

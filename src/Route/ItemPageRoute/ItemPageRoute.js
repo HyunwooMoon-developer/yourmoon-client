@@ -32,15 +32,19 @@ class ItemPageRoute extends Component {
   }
 
   render() {
-    const { item, reviews} = this.context;
+    const { item, reviews } = this.context;
     return (
       <>
-      <UserContext.Consumer>
-        {({user}) => (<><div className="item-page">
-          <ItemDetail item={item} />
-        </div>
-        <Review reviews={reviews} user={user}/>
-        <AddReview user={user}/></>)}
+        <UserContext.Consumer>
+          {({ user }) => (
+            <div className="item-page">
+              <div>
+                <ItemDetail item={item} user={user} />
+              </div>
+              <Review reviews={reviews} user={user} />
+              <AddReview user={user} />
+            </div>
+          )}
         </UserContext.Consumer>
       </>
     );

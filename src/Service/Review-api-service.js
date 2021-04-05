@@ -25,8 +25,8 @@ const ReviewApiService = {
         "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-    })
-  }
+    });
+  },
 };
 
 export default ReviewApiService;

@@ -1,0 +1,28 @@
+.login-form {
+  margin-top: 20px;
+  line-height: 40px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+.login-form button {
+  margin-bottom: 20px;
+  width: 40%;
+  outline: none;
+  background-color: #e4bfd6;
+  border: none;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.login-form button:hover {
+  background-color: #ca9fba;
+}
+
+.login-form button:active {
+  background-color: #ca9fba;
+  transform: translateY(4px);
+}

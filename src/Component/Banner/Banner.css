@@ -1,59 +1,58 @@
-.banner{
-    margin-top: 20px;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: #e4bfd6;
-    background: linear-gradient(to right, #e4bfd6, #fffcdc);
+.banner {
+  margin-top: 20px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #e4bfd6;
+  background: linear-gradient(to right, #e4bfd6, #fffcdc);
 }
 
-.banner-info{
-    margin: 0 auto;
-    border : none;
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffaadf;
+.banner-info {
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
 }
-.banner-info h2{
-    color: rgb(114, 113, 113);
-    font-weight: bolder;
-    font-size: 2em;
-}
-
-.banner-info p{
-    color: white;
-    font-weight: 800;
-    font-size: 1.3em;
+.banner-info h2 {
+  color: rgb(114, 113, 113);
+  font-weight: bolder;
+  font-size: 2em;
 }
 
-.banner-button{
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 20px;
-    font-weight: bolder;
-    cursor: pointer;
-    text-align: center;
-    outline: none;
-    background-color: rgb(226, 188, 107);
-    border: none;
-    border-radius: 15px;
-    box-shadow: 3px 8px rgb(153, 153, 153);
+.banner-info p {
+  color: rgb(158, 158, 158);
+  font-weight: 800;
+  font-size: 1.3em;
 }
 
-.banner-button a{
-    text-decoration: none;
-    color: black;
+.banner-button {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  background-color: rgb(226, 188, 107);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 3px 8px rgb(153, 153, 153);
 }
 
-.banner-button:hover{
-    background-color: rgb(206, 172, 100);
+.banner-button a {
+  text-decoration: none;
+  color: black;
 }
 
-.banner-button:active{
-    background-color:  rgb(206, 172, 100);
-    transform: translateY(4px);
-    box-shadow: 1px 3px rgb(153, 153, 153);
+.banner-button:hover {
+  background-color: rgb(206, 172, 100);
+}
+
+.banner-button:active {
+  background-color: rgb(206, 172, 100);
+  transform: translateY(4px);
+  box-shadow: 1px 3px rgb(153, 153, 153);
 }

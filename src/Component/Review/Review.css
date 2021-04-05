@@ -1,41 +1,43 @@
 .item-reviews {
   margin-top: 50px;
-  margin-left: 20%;
+  margin-left: 5%;
   list-style-type: none;
-  max-width: 60%;
+  max-width: 80%;
 }
 
 .item-review {
-  margin : 20px 0 20px 15px;
+  margin: 20px 0 20px 15px;
   background-color: #fae1f0;
   border: 4px solid #e4bfd6;
   border-radius: 15px;
   text-align: center;
 }
 
-.item-review h3,h4, p {
+.item-review h3,
+h4,
+p {
   margin-top: 20px;
   margin-left: 15px;
 }
 
-.item-review button{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    outline: none;
-    background-color: #e4bfd6;
-    border: none;
-    border-radius: 15px;
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 13px;
-    font-weight: bold;
+.item-review button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  outline: none;
+  background-color: #e4bfd6;
+  border: none;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-.item-review button:hover{
-    background-color: #ca9fba;
+.item-review button:hover {
+  background-color: #ca9fba;
 }
 
-.item-review button:active{
-    background-color: #ca9fba;
-    transform: translateY(4px);
+.item-review button:active {
+  background-color: #ca9fba;
+  transform: translateY(4px);
 }

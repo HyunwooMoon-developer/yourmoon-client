@@ -10,7 +10,7 @@ ReactDOM.render(
   <BrowserRouter>
     <UserProvider>
       <ItemProvider>
-          <App />
+        <App />
       </ItemProvider>
     </UserProvider>
   </BrowserRouter>,

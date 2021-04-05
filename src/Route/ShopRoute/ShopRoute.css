@@ -1,62 +1,55 @@
-.shopping-page{
-    max-width: 1080px;
-    margin: auto;
+.shopping-page {
+  width: 100%;
+  margin: 0 auto;
 }
 
-.shopping-top{
-    margin: 70px 100px 70px 100px;
-    text-align: center;
+.shopping-main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.shopping-top h2{
-    color: grey;
-    font-size: 1.3em;
-    font-weight: bold;
+.shopping-list {
+  flex-grow: 8;
+  margin-top: 20px;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.shopping-top select{
-    width: 150px;
+.shopping-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-left: 20px;
 }
 
-.shopping-main{
+.page-button {
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 20px;
+}
+
+.page-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.page-button a:hover {
+  color: hotpink;
+}
+
+@media all and (max-width: 800px) {
+  .shopping-main {
     display: flex;
+    flex-direction: column;
     margin-top: 20px;
     text-align: center;
-}
-
-
-.shopping-list{
-    flex-grow: 8;
-    margin-top: 20px;
-    margin-left: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-
-.shopping-list ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin-left: 20px;
-}
-
-
-.page-button{
-    margin-top: 20px;
-    text-align: center;
-    letter-spacing: 20px;
-}
-
-.page-button a{
-    text-decoration: none;
-    color: black;
-}
-
-.page-button a:hover{
-    color: hotpink;
+  }
 }

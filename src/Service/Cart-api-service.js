@@ -21,9 +21,9 @@ const cartApiService = {
       },
       body: JSON.stringify({
         item_id: item_id,
-        qty : qty,
-        scent : scent,
-        color : color,
+        qty: qty,
+        scent: scent,
+        color: color,
       }),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
