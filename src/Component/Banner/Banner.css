@@ -15,16 +15,9 @@
   text-align: center;
   padding: 20px;
 }
-.banner-info h2 {
-  color: rgb(114, 113, 113);
-  font-weight: bolder;
-  font-size: 2em;
-}
 
-.banner-info p {
-  color: rgb(158, 158, 158);
-  font-weight: 800;
-  font-size: 1.3em;
+.banner-info img{
+  max-width: 100%;
 }
 
 .banner-button {
